@@ -1,24 +1,22 @@
 #1 Load pkgs
-#2 Dynamic Paths
-#3 Data for prediction, sample means, and AI 1-7
-#4 Function to make plot of fitted values
-#5 Reproduce result in the paper
-
+#2 Dynamic Path
 
 #Clean env
 
 
 #1 Load pkgs
-  library('groundhog')
     pkgs=c('this.path',  #dynamic folder references
            'rio',        #import data (xlsx, sav, csv, ...)
            'mgcv',       #GAM models
            'plotrix',    #text with background in graph
            'sandwich',   #robust SE
            'lmtest')     #robust SE
+    missing=pkgs[!pkgs %in% rownames(installed.packages())]
+    if (length(missing)) install.packages(missing, repos='https://cloud.r-project.org')
+    invisible(lapply(pkgs, library, character.only=TRUE))
 
 #Clear console, environment, and plot area
-    sohn::clear()
+    rm(list=ls()); cat("\014"); graphics.off()
 
 
 #2 Dynamic Paths
@@ -32,10 +30,4 @@
   df=rio::import(fp)
 
 
-#3 Data for prediction, sample means, and AI 1-7
-
-
-#4 Function to make plot of fitted values
-
-
-#5 Reproduce result in the paper
+#3 

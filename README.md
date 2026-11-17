@@ -23,9 +23,9 @@ Open `Code/Analysis.R` in RStudio and run top to bottom. Paths are resolved
 dynamically via `this.path::this.dir()`, so the script works regardless of
 where the `Chapter 1` folder is located on disk — no hardcoded paths to edit.
 
-Packages are managed with [`groundhog`](https://groundhogr.com/) for
-reproducibility (pins package versions to a date rather than "whatever is
-currently installed").
+Required packages are listed at the top of `Code/Analysis.R`; any that are
+missing are installed from CRAN automatically, then all are loaded with
+`library()`.
 
 ## Data
 
