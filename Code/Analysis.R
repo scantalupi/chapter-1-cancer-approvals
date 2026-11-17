@@ -1,11 +1,17 @@
-#1 Load pkgs
-#2 Dynamic Path
+#1 Clear environment, console, and plots
+#2 Load packages 
+#3 Dynamic path
+#4 Clean data 
+#5 Figure 
+#6 Table
 
-#Clean env
+
+#1 Clear environment, console, and plots
+    rm(list=ls()); cat("\014"); graphics.off()
 
 
-#1 Load pkgs
-    pkgs=c('this.path',  #dynamic folder references
+#2 Load packages
+    pkgs=c('this.path',  #dynamic folder references # nolint
            'rio',        #import data (xlsx, sav, csv, ...)
            'mgcv',       #GAM models
            'plotrix',    #text with background in graph
@@ -15,11 +21,8 @@
     if (length(missing)) install.packages(missing, repos='https://cloud.r-project.org')
     invisible(lapply(pkgs, library, character.only=TRUE))
 
-#Clear console, environment, and plot area
-    rm(list=ls()); cat("\014"); graphics.off()
 
-
-#2 Dynamic Paths
+#3 Dynamic path
   RB=dirname(this.dir())
   raw_path=paste0(RB,"/Data/Raw/")
   clean_path=paste0(RB,"/Data/Clean/")
@@ -30,4 +33,10 @@
   df=rio::import(fp)
 
 
-#3 
+#4 Clean data 
+
+
+#5 Figure 
+
+
+#6 Table
